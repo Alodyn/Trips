@@ -123,9 +123,34 @@ export function nextDeparture(hhmm, now = new Date()) {
   return when;
 }
 
+/** HH:MM en Madrid de un día concreto (YYYY-MM-DD). Para probar un día laborable con ?date=. */
+export function departureOn(isoDay, hhmm) {
+  const [y, m, d] = isoDay.split("-").map(Number);
+  const [hh, mm] = hhmm.split(":").map(Number);
+  return madridWallTime(y, m, d, hh, mm);
+}
+
 export function num(v, digits = 2) {
   return Number(v).toLocaleString("es-ES", {
     minimumFractionDigits: digits,
     maximumFractionDigits: digits
   });
+}
+
+/**
+ * Próximo día (YYYY-MM-DD, Madrid) del tipo pedido: "laborable" (lunes a viernes),
+ * "sabado" o "domingo". Si es hoy y la hora ya pasó, el siguiente. No conoce festivos.
+ */
+export function nextDayOfType(type, hhmm = "00:00", now = new Date()) {
+  const [hh, mm] = hhmm.split(":").map(Number);
+  for (let i = 0; i < 9; i++) {
+    const p = madridParts(new Date(now.getTime() + i * 24 * 3600 * 1000));
+    const dow = new Date(Date.UTC(p.y, p.m - 1, p.d)).getUTCDay();
+    const ok = type === "sabado" ? dow === 6 : type === "domingo" ? dow === 0 : dow >= 1 && dow <= 5;
+    if (!ok) continue;
+    if (i === 0 && madridWallTime(p.y, p.m, p.d, hh, mm).getTime() < now.getTime()) continue;
+    return `${p.y}-${String(p.m).padStart(2, "0")}-${String(p.d).padStart(2, "0")}`;
+  }
+  const p = madridParts(now);
+  return `${p.y}-${String(p.m).padStart(2, "0")}-${String(p.d).padStart(2, "0")}`;
 }

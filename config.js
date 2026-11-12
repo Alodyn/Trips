@@ -8,6 +8,7 @@ export const CONFIG = {
   tomtomSearch: "https://api.tomtom.com/search/2/search/",
   tomtomRoute: "https://api.tomtom.com/routing/1/calculateRoute/",
   fuelApi: "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes",
+  otpBase: null, // p. ej. "https://otp.ejemplo.es". Para pruebas: ?otp=http://127.0.0.1:8080
   madridProvinceId: "28",
   madridBias: { lat: 40.4168, lon: -3.7038, radius: 120000 }
 };

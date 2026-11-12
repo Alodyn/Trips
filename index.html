@@ -88,6 +88,17 @@
     <input id="veh-q" class="sheet-search" type="search" placeholder="Volvo, León, Corolla…" autocomplete="off">
     <div id="veh-list" class="picker-list"></div>
   </div>
+  <div class="sheet" id="sheet-park" role="dialog" aria-labelledby="upk-title" hidden>
+    <div class="sheet-handle"></div>
+    <button type="button" class="icon-btn sheet-close" id="upk-close" aria-label="Cerrar">
+      <svg class="ic" width="18" height="18"><use href="#i-close"/></svg>
+    </button>
+    <h2 id="upk-title">Mi aparcamiento habitual</h2>
+    <p class="lead">Disuasorios del CRTM y estaciones de Cercanías, Metro y Metro Ligero con aparcamiento cerca. Se guarda en este móvil.</p>
+    <label class="sr-only" for="upk-q">Buscar estación o aparcamiento</label>
+    <input id="upk-q" class="sheet-search" type="search" placeholder="La Garena, Torrejón, Canillejas…" autocomplete="off">
+    <div id="upk-list" class="picker-list"></div>
+  </div>
   <div id="toast" class="toast" hidden role="status"></div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>

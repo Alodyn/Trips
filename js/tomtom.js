@@ -132,6 +132,10 @@ export function parseRoute(payload) {
     travelS: summary.travelTimeInSeconds,
     delayS,
     reportedDelayS: summary.trafficDelayInSeconds || 0,
+    // computeTravelTimeFor=all: sin tráfico, con el histórico y con incidencias en vivo.
+    noTrafficS: summary.noTrafficTravelTimeInSeconds ?? null,
+    historicS: summary.historicTrafficTravelTimeInSeconds ?? null,
+    liveS: summary.liveTrafficIncidentsTravelTimeInSeconds ?? null,
     departure: summary.departureTime || null,
     arrival: summary.arrivalTime || null,
     points
@@ -176,7 +180,7 @@ export async function searchPlaces(query, { signal } = {}) {
 
 export async function routeCar({ from, to, departAt, signal }) {
   const depart = departAt instanceof Date ? departAt.toISOString() : String(departAt);
-  const cacheKey = `r:${from.lat.toFixed(4)},${from.lon.toFixed(4)}:${to.lat.toFixed(4)},${to.lon.toFixed(4)}:${depart.slice(0, 16)}`;
+  const cacheKey = `r2:${from.lat.toFixed(4)},${from.lon.toFixed(4)}:${to.lat.toFixed(4)},${to.lon.toFixed(4)}:${depart.slice(0, 16)}`;
   if (mem.has(cacheKey)) return mem.get(cacheKey);
   try {
     const saved = sessionStorage.getItem("trips.tomtom." + cacheKey);
@@ -217,7 +221,7 @@ export async function routeCar({ from, to, departAt, signal }) {
     + `&departAt=${encodeURIComponent(depart)}`;
   let res;
   try {
-    res = await fetch(url, { signal, headers: { Accept: "application/json" } });
+    res = await routingFetch(url, signal);
   } catch (err) {
     if (err?.name === "AbortError") throw err;
     throw new TomTomError("No hay conexión con TomTom.", { userMessage: "No hay conexión con TomTom." });
@@ -232,6 +236,41 @@ export async function routeCar({ from, to, departAt, signal }) {
   mem.set(cacheKey, out);
   try { sessionStorage.setItem("trips.tomtom." + cacheKey, JSON.stringify(out)); } catch { /* cuota */ }
   return out;
+}
+
+/* El plan gratuito limita las peticiones por segundo. Con el coche directo y
+   varios aparcamientos candidatos salen ráfagas de 8–10 rutas: se lanzan de dos
+   en dos y un 429 se reintenta una vez, con una pequeña espera. */
+const ROUTING_PARALLEL = 2;
+let routingActive = 0;
+const routingQueue = [];
+
+function routingSlot() {
+  if (routingActive < ROUTING_PARALLEL) {
+    routingActive++;
+    return Promise.resolve();
+  }
+  return new Promise((resolve) => routingQueue.push(resolve));
+}
+
+function routingDone() {
+  const next = routingQueue.shift();
+  if (next) next();
+  else routingActive--;
+}
+
+async function routingFetch(url, signal) {
+  await routingSlot();
+  try {
+    let res = await fetch(url, { signal, headers: { Accept: "application/json" } });
+    if (res.status === 429) {
+      await new Promise((r) => setTimeout(r, 1200));
+      res = await fetch(url, { signal, headers: { Accept: "application/json" } });
+    }
+    return res;
+  } finally {
+    routingDone();
+  }
 }
 
 export function clearTomTomRejection() {

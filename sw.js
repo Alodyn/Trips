@@ -1,4 +1,4 @@
-const SHELL = "trips-shell-v1";
+const SHELL = "trips-shell-v4";
 const DATA = "trips-data-v1";
 const PRECACHE = [
   "./",
@@ -9,6 +9,8 @@ const PRECACHE = [
   "./vehicles.json",
   "./js/app.js",
   "./js/compare.js",
+  "./js/destpark.js",
+  "./js/traffic.js",
   "./js/fares.js",
   "./js/format.js",
   "./js/fuel.js",
@@ -20,6 +22,8 @@ const PRECACHE = [
   "./data/zones.json",
   "./data/parkings.json",
   "./data/stations.json",
+  "./data/station_parkings.json",
+  "./data/dest_parking.json",
   "./fixtures/tomtom-sample.json",
   "./icons/icon-192.png",
   "./icons/icon-512.png",

@@ -738,3 +738,59 @@ svg { display: block; flex: none; }
 @media (max-width: 899px) {
   .park-list.is-hidden, .park-map.is-hidden { display: none; }
 }
+
+/* Tramos de OpenTripPlanner */
+.line-badge { white-space: nowrap; display: inline-grid; place-items: center; height: 18px; min-width: 22px; padding: 0 6px; margin-right: 4px; border-radius: 5px; font-size: 0.68rem; font-weight: 800; letter-spacing: 0; vertical-align: 1px; }
+.step .node.walk { color: var(--muted); }
+
+/* Mi aparcamiento habitual */
+.usual-head { flex-direction: column; align-items: stretch; gap: 0; padding: 0; }
+.usual-main { display: flex; align-items: center; gap: 14px; padding: 16px; width: 100%; text-align: left; color: inherit; }
+.usual-head .p-ico { color: #fff; background: #3c6fb5; border-color: transparent; font-weight: 800; font-size: 1.2rem; }
+.usual-clear { align-self: flex-end; margin: -10px 16px 12px 0; font-size: 0.8rem; font-weight: 600; color: var(--muted); }
+.tag-pr { display: inline-grid; place-items: center; height: 16px; padding: 0 5px; margin-left: 4px; border-radius: 4px; font-size: 0.62rem; font-weight: 800; color: #fff; background: #3c6fb5; vertical-align: 1px; }
+.picker-row.is-on b { color: var(--amber-2); }
+.badge.usual { color: #fff; background: #3c6fb5; }
+.badge.fast { color: var(--on-amber); background: linear-gradient(180deg, var(--gold), var(--amber)); }
+.cand .badge { margin-left: 6px; vertical-align: 1px; }
+.opt-flag { display: inline-grid; place-items: center; height: 17px; padding: 0 6px; margin-left: 6px; border-radius: 5px; font-size: 0.64rem; font-weight: 800; letter-spacing: 0.02em; color: #fff; background: #3c6fb5; vertical-align: 3px; }
+
+/* Aparcar en destino */
+.dp-own { padding: 0 4px; margin-bottom: 2px; }
+.dp-row { display: block; }
+.dp-top { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.dp-top b { flex: 1; }
+.dp-m { font-weight: 700; font-size: 0.9rem; color: var(--amber-2); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.dp-m small { display: inline; font-size: 0.7rem; color: var(--muted); font-weight: 500; margin: 0; }
+.cand.is-off .dp-m, .cand.is-off b { color: var(--muted); }
+.dp-rent { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+.dp-rent > span { font-size: 0.8rem; color: var(--muted); flex: 1; }
+.dp-rent .usual-clear { position: static; margin: 0; }
+.dp-more { padding: 8px 12px 6px; }
+.dp-more small { color: var(--muted); font-size: 0.74rem; line-height: 1.4; }
+.badge.bad { background: rgba(200, 60, 50, 0.12); color: #b2352b; }
+.dp-rent .usual-clear { align-self: center; }
+.set .stepper { flex-shrink: 0; }
+.set .k { min-width: 0; }
+
+/* Día, ida y vuelta */
+.time-pop { width: min(330px, calc(100vw - 40px)); }
+.time-pop .day-seg { margin-bottom: 6px; }
+.time-pop .day-seg button { flex: 1; font-size: 0.82rem; }
+.tp-day { font-size: 0.8rem; color: var(--muted); margin: 0 0 10px 2px; }
+.tp-day::first-letter { text-transform: uppercase; }
+.tp-row { display: flex; gap: 10px; }
+.tp-row > div { flex: 1; }
+.tp-row input { width: 100%; font-size: 1rem; font-variant-numeric: tabular-nums; }
+.tp-note { margin: 10px 2px 0; font-size: 0.72rem; color: var(--dim); line-height: 1.35; }
+
+/* Ida / vuelta en los detalles */
+.leg-h { display: flex; align-items: center; gap: 6px; margin: 14px 0 2px; padding-top: 10px; border-top: 1px solid var(--divider); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--dim); }
+.leg-h .ic { color: var(--muted); }
+.pred { display: inline-flex; align-items: center; gap: 4px; margin-top: 3px; font-size: 0.7rem; color: var(--dim); }
+.pred .ic { color: var(--dim); }
+.v-col { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; }
+.v-col .usual-clear { margin: 0; align-self: flex-end; font-size: 0.72rem; }
+.dp-link { display: flex; align-items: center; gap: 6px; width: 100%; padding: 10px 12px 6px; font-size: 0.8rem; font-weight: 600; color: var(--amber-2); text-align: left; }
+.time-pop { -webkit-backdrop-filter: blur(28px) saturate(1.5); backdrop-filter: blur(28px) saturate(1.5); }
+.opt-row:has(.time-pop:not([hidden])) { z-index: 30; }

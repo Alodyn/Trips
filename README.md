@@ -32,22 +32,25 @@ No hay build. GitHub Pages sirve la raíz del repositorio.
 index.html, styles.css, manifest, sw.js, config.js, vehicles.json
 js/app.js        interfaz y estado
 js/tomtom.js     Search (geocodificación) y Routing (coche, traffic=true)
+js/traffic.js    margen de hora punta sobre el tiempo de TomTom
 js/fuel.js       media del Ministerio y coste km × consumo / 100 × precio
 js/fares.js      abono frente a sencillos
-js/parkride.js   tres disuasorios a lo largo del corredor
-js/transit.js    hueco para OpenTripPlanner 2 (hoy, pendiente de horarios)
+js/parkride.js   disuasorios y estaciones con aparcamiento
+js/destpark.js   dónde dejar el coche en el destino
+js/transit.js    OpenTripPlanner 2, opcional
 js/geo.js        punto en corona y estaciones por nombre
-data/            zonas, estaciones, aparcamientos y tarifas
+data/            zonas, estaciones, aparcamientos, destino y tarifas
 fixtures/        muestra local de TomTom
 ```
 
-Flujo de una comparación:
+Flujo de una comparación (el mismo en todas las búsquedas):
 
 1. Search de TomTom, sesgado a España y a Madrid (`countrySet=ES`, radio 120 km alrededor de Sol). Si la clave rechaza la petición, se muestra el error. No hay otro geocodificador detrás.
 2. La corona del punto sale del polígono CRTM. Si el nombre es exactamente el de una estación del catálogo, manda el campo `CORONATARIFARIA`.
-3. Routing con `traffic=true`, `computeTravelTimeFor=all` y la próxima hora de salida en Europe/Madrid.
-4. Para la combinada, tres aparcamientos disuasorios que quedan a medio camino (no el más cercano a casa ni el del destino). A cada uno se le pide el tramo en coche. El tramo de transporte no tiene minutos.
-5. El abono se calcula con las coronas del tramo que de verdad va en transporte: en la combinada, del aparcamiento al destino.
+3. Hora de salida y, si hay vuelta, hora de regreso, en el tipo de día elegido (laborable, sábado o domingo). Routing con `traffic=true` y `computeTravelTimeFor=all`. En hora punta laborable el tiempo sube hasta el índice de tráfico de TomTom para Madrid; el margen se puede cambiar a mano en Coche y perfil.
+4. Combinada: el aparcamiento habitual, la estación con parking más cercana al origen en el sentido del viaje, y el resto del corredor. El tramo en coche es de TomTom. El de transporte, de OTP si hay servidor.
+5. Coche hasta el destino: zona blanca fuera del SER (a pie o en metro), aparcamiento público, plaza alquilada, SER si cabe en la jornada, o «tengo plaza». La búsqueda de sitio en zona blanca se edita.
+6. El abono se calcula con las coronas del tramo que va en transporte. En la combinada, del aparcamiento al destino.
 
 Las búsquedas van con 450 ms de espera. Rutas y búsquedas acertadas se guardan solo en `sessionStorage`, para no repetir la misma llamada en la sesión. Un 403 se recuerda en memoria y no se reintenta solo.
 
@@ -58,6 +61,8 @@ La clave de cliente está en `config.js`. Es de plan gratuito y está **restring
 No se usa Nominatim. Search está habilitado; un geocodificador de reserva ocultaría un rechazo de la clave.
 
 En el mapa se dibuja la polilínea del coche sobre teselas de OpenStreetMap, con la atribución de OSM y la de TomTom en la línea de fuentes. Conviene leer los términos de TomTom por si el producto exige además sus propias teselas.
+
+Para una salida futura TomTom devuelve su perfil histórico, no el atasco de dentro de un rato. En hora punta de un laborable (7:00–10:00 y 17:00–20:00) Trips se queda con el mayor de esos tiempos y, si hace falta, lo sube hasta la congestión media del [TomTom Traffic Index de Madrid 2025](https://www.tomtom.com/traffic-index/city/madrid/): 62 % por la mañana y 59 % por la tarde, medido sobre el tiempo sin tráfico. Cada trayecto guardado puede llevar un margen propio, en la pestaña Coche. Es una predicción, no una medición del día.
 
 ## Carburante
 
@@ -91,14 +96,37 @@ Generados con `tools/build_data.py` a partir de los extractos del CRTM del 12/11
 | `data/zones.json` | 8 coronas, Douglas-Peucker ~55 m. 100 % de acuerdo con el polígono original en la comprobación |
 | `data/stations.json` | Metro, Cercanías, Metro Ligero, EMT, interurbanos y urbanos, con `CORONATARIFARIA` (inventario 29/05/2026). Sin coordenadas |
 | `data/parkings.json` | 71 de AparcamientosCM más Fuente de la Mora, Islazul y Pitis del Ayuntamiento, que no están en esa capa |
+| `data/station_parkings.json` | Estación de Cercanías, Metro o Metro Ligero y el aparcamiento a menos de 350 m. Lo genera `tools/build_station_parkings.py` |
+| `data/dest_parking.json` | Límite del SER, calles de zona blanca, parkings públicos y una referencia de plaza alquilada. Lo genera `tools/build_dest_parking.py` |
 
-La pestaña Aparcamientos es un mapa Leaflet (teselas OSM, con atribución) y la lista.
+La pestaña Aparcamientos es un mapa Leaflet (teselas OSM, con atribución) y la lista de disuasorios.
+
+La capa `AparcamientosCM` **repite el identificador** en sitios distintos: `28_079_7` es La Garena y también Pavones, y hay otros 16 códigos en el mismo caso. En la lista y en el mapa cada sitio usa `pr:{id}:{nombre}`, así que elegir uno no selecciona al otro. El código original de la capa se conserva en `layerId`.
+
+## Aparcar en destino
+
+En cada búsqueda el coche no da por hecho que la calle es gratis. `js/destpark.js` compara, para ese destino:
+
+- zona blanca (calle fuera del SER, según el Geoportal de Madrid): el coche llega, se suman los minutos de búsqueda y el último tramo a pie o en metro;
+- un aparcamiento público cercano, con la tarifa publicada o «sin dato»;
+- una plaza de garaje alquilada, con un precio editable;
+- el SER, solo si la estancia cabe en el horario y el tiempo máximo;
+- «Tengo plaza», si el destino es tuyo.
+
+El punto de zona blanca que sueles usar, y los minutos para encontrar sitio, se guardan con el destino. El aparcamiento disuasorio habitual (pestaña Coche) entra siempre en la combinada, esté donde esté, junto con la estación con parking más cercana al origen en el sentido del viaje.
 
 ## Transporte público
 
-`js/transit.js` exporta `planTransit`. Hoy devuelve `status: "pending"` y ningún minuto. La interfaz solo pinta una duración si `status === "ok"`. El comentario del módulo deja la consulta GraphQL `plan` de OTP 2 para sustituir el cuerpo sin cambiar el resultado.
+`js/transit.js` llama a OpenTripPlanner 2 (`POST {base}/otp/gtfs/v1`, consulta GraphQL `plan`) si hay un servidor. Se indica en `config.js` con `otpBase`, o en la URL con `?otp=https://…` (queda en `localStorage`, clave `trips.v1.otp`). `?otp=off` lo olvida.
 
-Hasta que exista un GTFS de Metro vigente no tiene sentido servir horarios de suburbano. El estudio del 12/11/2026 lo explica: el feed público caduca el 27/05/2026.
+Sin esa dirección, `planTransit` devuelve `status: "pending"` y la interfaz dice **«pendiente de horarios»**. No pinta minutos. Con servidor, solo enseña una duración si `status === "ok"`.
+
+El tramo en coche del park and ride no se le pide a OTP: OTP no usa tráfico. OTP puede proponer candidatos (`parkRideHints`); el tiempo en coche lo vuelve a calcular TomTom.
+
+### Límites de los horarios
+
+- El GTFS de Metro que alimenta el grafo está caducado (el calendario público llega al 27/05/2026). Los horarios de suburbano son los de 2025, con el calendario refechado. Si el itinerario lleva Metro, la app lo dice.
+- El GTFS de interurbanos del CRTM trae viajes imposibles. El caso conocido es el 223 Alcalá–Avenida de América en 12 minutos, cuando el real ronda los 40 o más. Cada itinerario se mira por velocidad media del tramo (autobús por encima de 65 km/h en más de 3 km, y umbrales parecidos en tranvía, metro y tren). Esos `trip` se excluyen y se vuelve a preguntar, hasta seis veces. Lo descartado se nombra en la ficha.
 
 ## PWA
 
@@ -112,6 +140,7 @@ Hasta que exista un GTFS de Metro vigente no tiene sentido servir horarios de su
 
 - CRTM, coronas, estaciones y aparcamientos: [licencia de uso del CRTM](https://www.crtm.es/licencia-de-uso). Capas ArcGIS `CoronasTarifarias_Vigentes_CRTM`, estaciones M4–M10 y `AparcamientosCM` (16/12/2025).
 - Ayuntamiento de Madrid, tres disuasorios que faltan en el CRTM: [dataset](https://datos.madrid.es/dataset/300531-0-aparcamientos-publicos), CC BY 4.0. Coordenadas del CSV a 12/11/2026.
+- SER y aparcamientos públicos municipales (aparcar en destino): Geoportal y [datos.madrid.es](https://datos.madrid.es/dataset/202625-0-aparcamientos-publicos), CC BY 4.0. Calles de zona blanca y parkings junto a estación: OpenStreetMap, ODbL.
 - Ministerio para la Transición Ecológica, precios de carburantes: API REST `ServiciosRESTCarburantes`, actualización cada media hora.
 - OpenStreetMap: teselas © colaboradores de OpenStreetMap.
 - TomTom: ruta y búsqueda con la clave de cliente. © TomTom.
@@ -121,6 +150,7 @@ Hasta que exista un GTFS de Metro vigente no tiene sentido servir horarios de su
 ## Siguientes pasos
 
 1. Comprobar en [alodyn.github.io/Trips](https://alodyn.github.io/Trips/) un trayecto real: tiempo con tráfico, coste de combustible y abono. La clave solo responde ahí.
-2. Cuando el CRTM publique un GTFS de Metro vigente, levantar OTP 2 (el grafo no cabe en GitHub Pages) y rellenar `planTransit` con la consulta GraphQL que ya está documentada en `js/transit.js`. El tramo en coche se queda en TomTom: OTP no usa tráfico.
-3. Con el itinerario real, sustituir el sencillo estimado por el título del modo que salga (y `cercaniasSingle` si el tramo es de Cercanías) y sumar el tiempo de transporte al del coche.
-4. El 1/01/2027, revisar si la rebaja del abono se prorroga. Si no, el JSON ya cae a la tarifa oficial.
+2. Publicar el OTP de Madrid y poner su URL en `otpBase` o abrir la app con `?otp=`. Sin eso, el transporte sigue en «pendiente de horarios».
+3. Cuando el CRTM publique un GTFS de Metro vigente, reconstruir el grafo y quitar el aviso de horarios de 2025. El tramo en coche se queda en TomTom.
+4. Con el itinerario real, afinar el sencillo al modo que salga (y `cercaniasSingle` si el tramo es de Cercanías).
+5. El 1/01/2027, revisar si la rebaja del abono se prorroga. Si no, el JSON ya cae a la tarifa oficial.
