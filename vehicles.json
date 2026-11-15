@@ -1,0 +1,1578 @@
+{
+  "meta": {
+    "title": "Capacidades de depósito y consumos orientativos",
+    "note": "Cifras aproximadas compiladas a partir de fichas técnicas de km77.com y folletos de fabricante (consumo mixto NEDC o WLTP según la generación). No sustituyen al manual del vehículo. Puedes editar los litros y el consumo a mano.",
+    "sources": [
+      "https://www.km77.com/ (fichas técnicas de modelos comercializados en España)",
+      "Folletos y datos técnicos de fabricante",
+      "Volvo S60 Technical Data, September 2004: depósito 70 litros; consumo mixto 2.4D ~6,5–6,7 l/100 km (NEDC)",
+      "https://www.km77.com/coches/volvo/s60/2001/estandar/estandar/s60-24d/datos (depósito 70 l, mixto 6,7 l/100 km)"
+    ]
+  },
+  "makes": [
+    {
+      "name": "Volvo",
+      "models": [
+        {
+          "name": "S60",
+          "variants": [
+            {
+              "yearFrom": 2001,
+              "yearTo": 2009,
+              "engine": "2.4D 130-163 CV",
+              "fuel": "goa",
+              "tank": 70,
+              "cons": 6.7,
+              "note": "Ficha km77 y datos técnicos Volvo 2004. Depósito 70 l (68 l en S60 R, 72 l en AWD)."
+            },
+            {
+              "yearFrom": 2010,
+              "yearTo": 2018,
+              "engine": "D3 / D4 / D5",
+              "fuel": "goa",
+              "tank": 67.5,
+              "cons": 4.5,
+              "note": "2.ª gen.; depósito habitual 67,5 l (WLTP/NEDC según año)."
+            },
+            {
+              "yearFrom": 2018,
+              "yearTo": 2026,
+              "engine": "B4 / B5 diésel o microhíbrido",
+              "fuel": "goa",
+              "tank": 60,
+              "cons": 5.2,
+              "note": "3.ª gen.; depósito aproximado 60 l."
+            },
+            {
+              "yearFrom": 2010,
+              "yearTo": 2018,
+              "engine": "T4 / T5 / T6 gasolina",
+              "fuel": "g95",
+              "tank": 67.5,
+              "cons": 6.8,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "V60",
+          "variants": [
+            {
+              "yearFrom": 2010,
+              "yearTo": 2018,
+              "engine": "D3 / D4",
+              "fuel": "goa",
+              "tank": 67.5,
+              "cons": 4.5,
+              "note": ""
+            },
+            {
+              "yearFrom": 2018,
+              "yearTo": 2026,
+              "engine": "B4 diésel",
+              "fuel": "goa",
+              "tank": 60,
+              "cons": 5.3,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "XC60",
+          "variants": [
+            {
+              "yearFrom": 2008,
+              "yearTo": 2017,
+              "engine": "D4 / D5",
+              "fuel": "goa",
+              "tank": 70,
+              "cons": 5.7,
+              "note": ""
+            },
+            {
+              "yearFrom": 2017,
+              "yearTo": 2026,
+              "engine": "B4 / D4",
+              "fuel": "goa",
+              "tank": 71,
+              "cons": 5.8,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "XC40",
+          "variants": [
+            {
+              "yearFrom": 2018,
+              "yearTo": 2026,
+              "engine": "D3 / B3 diésel",
+              "fuel": "goa",
+              "tank": 54,
+              "cons": 5.0,
+              "note": ""
+            },
+            {
+              "yearFrom": 2018,
+              "yearTo": 2026,
+              "engine": "T3 / T4 / B3 gasolina",
+              "fuel": "g95",
+              "tank": 54,
+              "cons": 6.4,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "V40",
+          "variants": [
+            {
+              "yearFrom": 2012,
+              "yearTo": 2019,
+              "engine": "D2 / D3 / D4",
+              "fuel": "goa",
+              "tank": 62,
+              "cons": 3.8,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SEAT",
+      "models": [
+        {
+          "name": "Ibiza",
+          "variants": [
+            {
+              "yearFrom": 2017,
+              "yearTo": 2026,
+              "engine": "1.0 TSI",
+              "fuel": "g95",
+              "tank": 40,
+              "cons": 5.2,
+              "note": ""
+            },
+            {
+              "yearFrom": 2017,
+              "yearTo": 2024,
+              "engine": "1.6 TDI",
+              "fuel": "goa",
+              "tank": 40,
+              "cons": 4.0,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "León",
+          "variants": [
+            {
+              "yearFrom": 2013,
+              "yearTo": 2020,
+              "engine": "1.5 TSI / 1.4 TSI",
+              "fuel": "g95",
+              "tank": 50,
+              "cons": 5.4,
+              "note": ""
+            },
+            {
+              "yearFrom": 2013,
+              "yearTo": 2020,
+              "engine": "2.0 TDI / 1.6 TDI",
+              "fuel": "goa",
+              "tank": 50,
+              "cons": 4.2,
+              "note": ""
+            },
+            {
+              "yearFrom": 2020,
+              "yearTo": 2026,
+              "engine": "1.5 TSI",
+              "fuel": "g95",
+              "tank": 45,
+              "cons": 5.6,
+              "note": ""
+            },
+            {
+              "yearFrom": 2020,
+              "yearTo": 2026,
+              "engine": "2.0 TDI",
+              "fuel": "goa",
+              "tank": 45,
+              "cons": 4.6,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Arona",
+          "variants": [
+            {
+              "yearFrom": 2017,
+              "yearTo": 2026,
+              "engine": "1.0 TSI",
+              "fuel": "g95",
+              "tank": 40,
+              "cons": 5.4,
+              "note": ""
+            },
+            {
+              "yearFrom": 2017,
+              "yearTo": 2024,
+              "engine": "1.6 TDI",
+              "fuel": "goa",
+              "tank": 40,
+              "cons": 4.3,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Ateca",
+          "variants": [
+            {
+              "yearFrom": 2016,
+              "yearTo": 2026,
+              "engine": "1.5 TSI / 2.0 TSI",
+              "fuel": "g95",
+              "tank": 50,
+              "cons": 6.2,
+              "note": ""
+            },
+            {
+              "yearFrom": 2016,
+              "yearTo": 2026,
+              "engine": "2.0 TDI",
+              "fuel": "goa",
+              "tank": 50,
+              "cons": 4.9,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Volkswagen",
+      "models": [
+        {
+          "name": "Golf",
+          "variants": [
+            {
+              "yearFrom": 2013,
+              "yearTo": 2020,
+              "engine": "1.5 TSI / 1.4 TSI",
+              "fuel": "g95",
+              "tank": 50,
+              "cons": 5.2,
+              "note": ""
+            },
+            {
+              "yearFrom": 2013,
+              "yearTo": 2020,
+              "engine": "2.0 TDI / 1.6 TDI",
+              "fuel": "goa",
+              "tank": 50,
+              "cons": 4.1,
+              "note": ""
+            },
+            {
+              "yearFrom": 2020,
+              "yearTo": 2026,
+              "engine": "1.5 TSI",
+              "fuel": "g95",
+              "tank": 45,
+              "cons": 5.5,
+              "note": ""
+            },
+            {
+              "yearFrom": 2020,
+              "yearTo": 2026,
+              "engine": "2.0 TDI",
+              "fuel": "goa",
+              "tank": 45,
+              "cons": 4.5,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Polo",
+          "variants": [
+            {
+              "yearFrom": 2017,
+              "yearTo": 2026,
+              "engine": "1.0 TSI",
+              "fuel": "g95",
+              "tank": 40,
+              "cons": 5.1,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "T-Roc",
+          "variants": [
+            {
+              "yearFrom": 2017,
+              "yearTo": 2026,
+              "engine": "1.5 TSI / 1.0 TSI",
+              "fuel": "g95",
+              "tank": 50,
+              "cons": 5.7,
+              "note": ""
+            },
+            {
+              "yearFrom": 2017,
+              "yearTo": 2026,
+              "engine": "2.0 TDI",
+              "fuel": "goa",
+              "tank": 50,
+              "cons": 4.7,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Tiguan",
+          "variants": [
+            {
+              "yearFrom": 2016,
+              "yearTo": 2024,
+              "engine": "1.5 TSI / 2.0 TSI",
+              "fuel": "g95",
+              "tank": 58,
+              "cons": 6.5,
+              "note": ""
+            },
+            {
+              "yearFrom": 2016,
+              "yearTo": 2024,
+              "engine": "2.0 TDI",
+              "fuel": "goa",
+              "tank": 58,
+              "cons": 5.2,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Passat",
+          "variants": [
+            {
+              "yearFrom": 2015,
+              "yearTo": 2024,
+              "engine": "2.0 TDI",
+              "fuel": "goa",
+              "tank": 66,
+              "cons": 4.6,
+              "note": ""
+            },
+            {
+              "yearFrom": 2015,
+              "yearTo": 2024,
+              "engine": "1.5 TSI / 2.0 TSI",
+              "fuel": "g95",
+              "tank": 66,
+              "cons": 6.0,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Renault",
+      "models": [
+        {
+          "name": "Clio",
+          "variants": [
+            {
+              "yearFrom": 2019,
+              "yearTo": 2026,
+              "engine": "TCe 90/100",
+              "fuel": "g95",
+              "tank": 42,
+              "cons": 5.0,
+              "note": ""
+            },
+            {
+              "yearFrom": 2019,
+              "yearTo": 2024,
+              "engine": "Blue dCi",
+              "fuel": "goa",
+              "tank": 39,
+              "cons": 3.9,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Captur",
+          "variants": [
+            {
+              "yearFrom": 2020,
+              "yearTo": 2026,
+              "engine": "TCe",
+              "fuel": "g95",
+              "tank": 48,
+              "cons": 5.6,
+              "note": ""
+            },
+            {
+              "yearFrom": 2020,
+              "yearTo": 2024,
+              "engine": "Blue dCi",
+              "fuel": "goa",
+              "tank": 46,
+              "cons": 4.4,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Megane",
+          "variants": [
+            {
+              "yearFrom": 2016,
+              "yearTo": 2022,
+              "engine": "TCe",
+              "fuel": "g95",
+              "tank": 47,
+              "cons": 5.8,
+              "note": ""
+            },
+            {
+              "yearFrom": 2016,
+              "yearTo": 2022,
+              "engine": "dCi / Blue dCi",
+              "fuel": "goa",
+              "tank": 47,
+              "cons": 4.3,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Austral",
+          "variants": [
+            {
+              "yearFrom": 2022,
+              "yearTo": 2026,
+              "engine": "mild hybrid",
+              "fuel": "g95",
+              "tank": 55,
+              "cons": 5.3,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dacia",
+      "models": [
+        {
+          "name": "Sandero",
+          "variants": [
+            {
+              "yearFrom": 2021,
+              "yearTo": 2026,
+              "engine": "TCe 90/100",
+              "fuel": "g95",
+              "tank": 50,
+              "cons": 5.2,
+              "note": ""
+            },
+            {
+              "yearFrom": 2021,
+              "yearTo": 2026,
+              "engine": "ECO-G GLP",
+              "fuel": "glp",
+              "tank": 50,
+              "cons": 6.7,
+              "note": "Depósito gasolina ~50 l más depósito GLP."
+            }
+          ]
+        },
+        {
+          "name": "Duster",
+          "variants": [
+            {
+              "yearFrom": 2018,
+              "yearTo": 2024,
+              "engine": "TCe",
+              "fuel": "g95",
+              "tank": 50,
+              "cons": 6.4,
+              "note": ""
+            },
+            {
+              "yearFrom": 2018,
+              "yearTo": 2024,
+              "engine": "Blue dCi",
+              "fuel": "goa",
+              "tank": 50,
+              "cons": 4.8,
+              "note": ""
+            },
+            {
+              "yearFrom": 2018,
+              "yearTo": 2024,
+              "engine": "TCe ECO-G",
+              "fuel": "glp",
+              "tank": 50,
+              "cons": 7.2,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Jogger",
+          "variants": [
+            {
+              "yearFrom": 2022,
+              "yearTo": 2026,
+              "engine": "TCe / ECO-G",
+              "fuel": "g95",
+              "tank": 50,
+              "cons": 5.6,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Peugeot",
+      "models": [
+        {
+          "name": "208",
+          "variants": [
+            {
+              "yearFrom": 2019,
+              "yearTo": 2026,
+              "engine": "PureTech",
+              "fuel": "g95",
+              "tank": 44,
+              "cons": 5.0,
+              "note": ""
+            },
+            {
+              "yearFrom": 2019,
+              "yearTo": 2024,
+              "engine": "BlueHDi",
+              "fuel": "goa",
+              "tank": 41,
+              "cons": 3.9,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "2008",
+          "variants": [
+            {
+              "yearFrom": 2019,
+              "yearTo": 2026,
+              "engine": "PureTech",
+              "fuel": "g95",
+              "tank": 44,
+              "cons": 5.5,
+              "note": ""
+            },
+            {
+              "yearFrom": 2019,
+              "yearTo": 2024,
+              "engine": "BlueHDi",
+              "fuel": "goa",
+              "tank": 44,
+              "cons": 4.3,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "308",
+          "variants": [
+            {
+              "yearFrom": 2014,
+              "yearTo": 2021,
+              "engine": "PureTech",
+              "fuel": "g95",
+              "tank": 53,
+              "cons": 5.2,
+              "note": ""
+            },
+            {
+              "yearFrom": 2014,
+              "yearTo": 2021,
+              "engine": "BlueHDi",
+              "fuel": "goa",
+              "tank": 53,
+              "cons": 3.8,
+              "note": ""
+            },
+            {
+              "yearFrom": 2021,
+              "yearTo": 2026,
+              "engine": "PureTech / Hybrid",
+              "fuel": "g95",
+              "tank": 52,
+              "cons": 5.6,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "3008",
+          "variants": [
+            {
+              "yearFrom": 2016,
+              "yearTo": 2024,
+              "engine": "PureTech",
+              "fuel": "g95",
+              "tank": 53,
+              "cons": 6.0,
+              "note": ""
+            },
+            {
+              "yearFrom": 2016,
+              "yearTo": 2024,
+              "engine": "BlueHDi",
+              "fuel": "goa",
+              "tank": 53,
+              "cons": 4.8,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Citroën",
+      "models": [
+        {
+          "name": "C3",
+          "variants": [
+            {
+              "yearFrom": 2016,
+              "yearTo": 2024,
+              "engine": "PureTech",
+              "fuel": "g95",
+              "tank": 45,
+              "cons": 5.1,
+              "note": ""
+            },
+            {
+              "yearFrom": 2016,
+              "yearTo": 2021,
+              "engine": "BlueHDi",
+              "fuel": "goa",
+              "tank": 45,
+              "cons": 3.9,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "C4",
+          "variants": [
+            {
+              "yearFrom": 2020,
+              "yearTo": 2026,
+              "engine": "PureTech",
+              "fuel": "g95",
+              "tank": 50,
+              "cons": 5.6,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "C5 Aircross",
+          "variants": [
+            {
+              "yearFrom": 2018,
+              "yearTo": 2026,
+              "engine": "PureTech / Hybrid",
+              "fuel": "g95",
+              "tank": 53,
+              "cons": 6.2,
+              "note": ""
+            },
+            {
+              "yearFrom": 2018,
+              "yearTo": 2024,
+              "engine": "BlueHDi",
+              "fuel": "goa",
+              "tank": 53,
+              "cons": 5.0,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Opel",
+      "models": [
+        {
+          "name": "Corsa",
+          "variants": [
+            {
+              "yearFrom": 2019,
+              "yearTo": 2026,
+              "engine": "1.2 Turbo",
+              "fuel": "g95",
+              "tank": 44,
+              "cons": 5.1,
+              "note": ""
+            },
+            {
+              "yearFrom": 2019,
+              "yearTo": 2023,
+              "engine": "1.5 Diesel",
+              "fuel": "goa",
+              "tank": 41,
+              "cons": 3.9,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Mokka",
+          "variants": [
+            {
+              "yearFrom": 2021,
+              "yearTo": 2026,
+              "engine": "1.2 Turbo",
+              "fuel": "g95",
+              "tank": 44,
+              "cons": 5.6,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Astra",
+          "variants": [
+            {
+              "yearFrom": 2021,
+              "yearTo": 2026,
+              "engine": "1.2 Turbo",
+              "fuel": "g95",
+              "tank": 52,
+              "cons": 5.5,
+              "note": ""
+            },
+            {
+              "yearFrom": 2015,
+              "yearTo": 2021,
+              "engine": "1.6 CDTI",
+              "fuel": "goa",
+              "tank": 48,
+              "cons": 4.2,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Toyota",
+      "models": [
+        {
+          "name": "Yaris",
+          "variants": [
+            {
+              "yearFrom": 2020,
+              "yearTo": 2026,
+              "engine": "Hybrid 116",
+              "fuel": "g95",
+              "tank": 36,
+              "cons": 3.8,
+              "note": "Depósito pequeño habitual en híbridos."
+            }
+          ]
+        },
+        {
+          "name": "Corolla",
+          "variants": [
+            {
+              "yearFrom": 2019,
+              "yearTo": 2026,
+              "engine": "Hybrid 140/196",
+              "fuel": "g95",
+              "tank": 43,
+              "cons": 4.4,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "C-HR",
+          "variants": [
+            {
+              "yearFrom": 2016,
+              "yearTo": 2023,
+              "engine": "Hybrid",
+              "fuel": "g95",
+              "tank": 43,
+              "cons": 4.3,
+              "note": ""
+            },
+            {
+              "yearFrom": 2023,
+              "yearTo": 2026,
+              "engine": "Hybrid",
+              "fuel": "g95",
+              "tank": 43,
+              "cons": 4.6,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "RAV4",
+          "variants": [
+            {
+              "yearFrom": 2019,
+              "yearTo": 2026,
+              "engine": "Hybrid / 2.5",
+              "fuel": "g95",
+              "tank": 55,
+              "cons": 5.5,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hyundai",
+      "models": [
+        {
+          "name": "i20",
+          "variants": [
+            {
+              "yearFrom": 2020,
+              "yearTo": 2026,
+              "engine": "1.0 TGDI / 1.2",
+              "fuel": "g95",
+              "tank": 40,
+              "cons": 5.2,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Tucson",
+          "variants": [
+            {
+              "yearFrom": 2015,
+              "yearTo": 2020,
+              "engine": "1.6 / 2.0 CRDi",
+              "fuel": "goa",
+              "tank": 62,
+              "cons": 5.2,
+              "note": ""
+            },
+            {
+              "yearFrom": 2020,
+              "yearTo": 2026,
+              "engine": "1.6 T-GDI / Hybrid",
+              "fuel": "g95",
+              "tank": 54,
+              "cons": 5.8,
+              "note": ""
+            },
+            {
+              "yearFrom": 2020,
+              "yearTo": 2026,
+              "engine": "1.6 CRDi",
+              "fuel": "goa",
+              "tank": 54,
+              "cons": 5.2,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Kona",
+          "variants": [
+            {
+              "yearFrom": 2017,
+              "yearTo": 2023,
+              "engine": "1.0 / 1.6 T-GDI",
+              "fuel": "g95",
+              "tank": 50,
+              "cons": 5.8,
+              "note": ""
+            },
+            {
+              "yearFrom": 2017,
+              "yearTo": 2023,
+              "engine": "1.6 CRDi",
+              "fuel": "goa",
+              "tank": 50,
+              "cons": 4.6,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kia",
+      "models": [
+        {
+          "name": "Sportage",
+          "variants": [
+            {
+              "yearFrom": 2016,
+              "yearTo": 2021,
+              "engine": "1.6 / 2.0 CRDi",
+              "fuel": "goa",
+              "tank": 62,
+              "cons": 5.2,
+              "note": ""
+            },
+            {
+              "yearFrom": 2021,
+              "yearTo": 2026,
+              "engine": "1.6 T-GDI / Hybrid",
+              "fuel": "g95",
+              "tank": 54,
+              "cons": 5.8,
+              "note": ""
+            },
+            {
+              "yearFrom": 2021,
+              "yearTo": 2026,
+              "engine": "1.6 CRDi",
+              "fuel": "goa",
+              "tank": 54,
+              "cons": 5.3,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Ceed",
+          "variants": [
+            {
+              "yearFrom": 2018,
+              "yearTo": 2026,
+              "engine": "1.0 / 1.5 T-GDI",
+              "fuel": "g95",
+              "tank": 50,
+              "cons": 5.5,
+              "note": ""
+            },
+            {
+              "yearFrom": 2018,
+              "yearTo": 2024,
+              "engine": "1.6 CRDi",
+              "fuel": "goa",
+              "tank": 50,
+              "cons": 4.4,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Niro",
+          "variants": [
+            {
+              "yearFrom": 2016,
+              "yearTo": 2026,
+              "engine": "Hybrid",
+              "fuel": "g95",
+              "tank": 42,
+              "cons": 4.2,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ford",
+      "models": [
+        {
+          "name": "Puma",
+          "variants": [
+            {
+              "yearFrom": 2019,
+              "yearTo": 2026,
+              "engine": "1.0 EcoBoost",
+              "fuel": "g95",
+              "tank": 42,
+              "cons": 5.5,
+              "note": ""
+            },
+            {
+              "yearFrom": 2019,
+              "yearTo": 2024,
+              "engine": "1.5 EcoBlue",
+              "fuel": "goa",
+              "tank": 42,
+              "cons": 4.5,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Focus",
+          "variants": [
+            {
+              "yearFrom": 2018,
+              "yearTo": 2026,
+              "engine": "1.0 EcoBoost",
+              "fuel": "g95",
+              "tank": 52,
+              "cons": 5.2,
+              "note": ""
+            },
+            {
+              "yearFrom": 2018,
+              "yearTo": 2024,
+              "engine": "1.5 EcoBlue",
+              "fuel": "goa",
+              "tank": 52,
+              "cons": 4.2,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Kuga",
+          "variants": [
+            {
+              "yearFrom": 2019,
+              "yearTo": 2026,
+              "engine": "1.5 EcoBoost / Hybrid",
+              "fuel": "g95",
+              "tank": 54,
+              "cons": 5.8,
+              "note": ""
+            },
+            {
+              "yearFrom": 2019,
+              "yearTo": 2024,
+              "engine": "1.5 / 2.0 EcoBlue",
+              "fuel": "goa",
+              "tank": 54,
+              "cons": 5.0,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Fiesta",
+          "variants": [
+            {
+              "yearFrom": 2017,
+              "yearTo": 2023,
+              "engine": "1.0 EcoBoost",
+              "fuel": "g95",
+              "tank": 42,
+              "cons": 5.0,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mercedes-Benz",
+      "models": [
+        {
+          "name": "Clase A",
+          "variants": [
+            {
+              "yearFrom": 2018,
+              "yearTo": 2026,
+              "engine": "A 180 / A 200",
+              "fuel": "g95",
+              "tank": 43,
+              "cons": 5.8,
+              "note": ""
+            },
+            {
+              "yearFrom": 2018,
+              "yearTo": 2026,
+              "engine": "A 180 d / A 200 d",
+              "fuel": "goa",
+              "tank": 43,
+              "cons": 4.6,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Clase C",
+          "variants": [
+            {
+              "yearFrom": 2014,
+              "yearTo": 2021,
+              "engine": "C 220 d / C 200 d",
+              "fuel": "goa",
+              "tank": 66,
+              "cons": 4.5,
+              "note": ""
+            },
+            {
+              "yearFrom": 2021,
+              "yearTo": 2026,
+              "engine": "C 220 d",
+              "fuel": "goa",
+              "tank": 66,
+              "cons": 5.0,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "GLC",
+          "variants": [
+            {
+              "yearFrom": 2015,
+              "yearTo": 2022,
+              "engine": "220 d / 250 d",
+              "fuel": "goa",
+              "tank": 66,
+              "cons": 5.5,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BMW",
+      "models": [
+        {
+          "name": "Serie 1",
+          "variants": [
+            {
+              "yearFrom": 2019,
+              "yearTo": 2026,
+              "engine": "118i / 120i",
+              "fuel": "g95",
+              "tank": 42,
+              "cons": 5.8,
+              "note": ""
+            },
+            {
+              "yearFrom": 2019,
+              "yearTo": 2026,
+              "engine": "118d / 120d",
+              "fuel": "goa",
+              "tank": 42,
+              "cons": 4.6,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Serie 3",
+          "variants": [
+            {
+              "yearFrom": 2012,
+              "yearTo": 2019,
+              "engine": "320d / 318d",
+              "fuel": "goa",
+              "tank": 57,
+              "cons": 4.4,
+              "note": ""
+            },
+            {
+              "yearFrom": 2019,
+              "yearTo": 2026,
+              "engine": "320d",
+              "fuel": "goa",
+              "tank": 59,
+              "cons": 4.8,
+              "note": ""
+            },
+            {
+              "yearFrom": 2019,
+              "yearTo": 2026,
+              "engine": "320i / 330i",
+              "fuel": "g95",
+              "tank": 59,
+              "cons": 6.2,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "X3",
+          "variants": [
+            {
+              "yearFrom": 2017,
+              "yearTo": 2026,
+              "engine": "xDrive20d / 30d",
+              "fuel": "goa",
+              "tank": 68,
+              "cons": 5.6,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Audi",
+      "models": [
+        {
+          "name": "A3",
+          "variants": [
+            {
+              "yearFrom": 2012,
+              "yearTo": 2020,
+              "engine": "35 TFSI / 1.5",
+              "fuel": "g95",
+              "tank": 50,
+              "cons": 5.3,
+              "note": ""
+            },
+            {
+              "yearFrom": 2012,
+              "yearTo": 2020,
+              "engine": "2.0 TDI / 1.6 TDI",
+              "fuel": "goa",
+              "tank": 50,
+              "cons": 4.2,
+              "note": ""
+            },
+            {
+              "yearFrom": 2020,
+              "yearTo": 2026,
+              "engine": "35 TFSI",
+              "fuel": "g95",
+              "tank": 50,
+              "cons": 5.6,
+              "note": ""
+            },
+            {
+              "yearFrom": 2020,
+              "yearTo": 2026,
+              "engine": "35 TDI",
+              "fuel": "goa",
+              "tank": 50,
+              "cons": 4.6,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "A4",
+          "variants": [
+            {
+              "yearFrom": 2015,
+              "yearTo": 2024,
+              "engine": "2.0 TDI",
+              "fuel": "goa",
+              "tank": 54,
+              "cons": 4.4,
+              "note": ""
+            },
+            {
+              "yearFrom": 2015,
+              "yearTo": 2024,
+              "engine": "35 TFSI / 40 TFSI",
+              "fuel": "g95",
+              "tank": 54,
+              "cons": 6.0,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Q3",
+          "variants": [
+            {
+              "yearFrom": 2018,
+              "yearTo": 2026,
+              "engine": "35 TFSI",
+              "fuel": "g95",
+              "tank": 58,
+              "cons": 6.4,
+              "note": ""
+            },
+            {
+              "yearFrom": 2018,
+              "yearTo": 2026,
+              "engine": "35 TDI",
+              "fuel": "goa",
+              "tank": 58,
+              "cons": 5.2,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Nissan",
+      "models": [
+        {
+          "name": "Qashqai",
+          "variants": [
+            {
+              "yearFrom": 2014,
+              "yearTo": 2021,
+              "engine": "1.5 dCi / 1.6 dCi",
+              "fuel": "goa",
+              "tank": 55,
+              "cons": 4.6,
+              "note": ""
+            },
+            {
+              "yearFrom": 2021,
+              "yearTo": 2026,
+              "engine": "1.3 DIG-T / mild hybrid",
+              "fuel": "g95",
+              "tank": 55,
+              "cons": 5.8,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Juke",
+          "variants": [
+            {
+              "yearFrom": 2019,
+              "yearTo": 2026,
+              "engine": "1.0 DIG-T",
+              "fuel": "g95",
+              "tank": 46,
+              "cons": 5.6,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Škoda",
+      "models": [
+        {
+          "name": "Octavia",
+          "variants": [
+            {
+              "yearFrom": 2013,
+              "yearTo": 2020,
+              "engine": "1.5 TSI / 1.0 TSI",
+              "fuel": "g95",
+              "tank": 50,
+              "cons": 5.2,
+              "note": ""
+            },
+            {
+              "yearFrom": 2013,
+              "yearTo": 2020,
+              "engine": "2.0 TDI",
+              "fuel": "goa",
+              "tank": 50,
+              "cons": 4.2,
+              "note": ""
+            },
+            {
+              "yearFrom": 2020,
+              "yearTo": 2026,
+              "engine": "1.5 TSI",
+              "fuel": "g95",
+              "tank": 45,
+              "cons": 5.5,
+              "note": ""
+            },
+            {
+              "yearFrom": 2020,
+              "yearTo": 2026,
+              "engine": "2.0 TDI",
+              "fuel": "goa",
+              "tank": 45,
+              "cons": 4.5,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Kamiq",
+          "variants": [
+            {
+              "yearFrom": 2019,
+              "yearTo": 2026,
+              "engine": "1.0 / 1.5 TSI",
+              "fuel": "g95",
+              "tank": 50,
+              "cons": 5.4,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Karoq",
+          "variants": [
+            {
+              "yearFrom": 2017,
+              "yearTo": 2026,
+              "engine": "1.5 TSI",
+              "fuel": "g95",
+              "tank": 50,
+              "cons": 5.9,
+              "note": ""
+            },
+            {
+              "yearFrom": 2017,
+              "yearTo": 2026,
+              "engine": "2.0 TDI",
+              "fuel": "goa",
+              "tank": 50,
+              "cons": 4.8,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fiat",
+      "models": [
+        {
+          "name": "500",
+          "variants": [
+            {
+              "yearFrom": 2015,
+              "yearTo": 2020,
+              "engine": "0.9 TwinAir / 1.2",
+              "fuel": "g95",
+              "tank": 35,
+              "cons": 4.8,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Tipo",
+          "variants": [
+            {
+              "yearFrom": 2016,
+              "yearTo": 2024,
+              "engine": "1.0 / 1.4",
+              "fuel": "g95",
+              "tank": 50,
+              "cons": 5.6,
+              "note": ""
+            },
+            {
+              "yearFrom": 2016,
+              "yearTo": 2021,
+              "engine": "1.6 Multijet",
+              "fuel": "goa",
+              "tank": 50,
+              "cons": 4.4,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "Panda",
+          "variants": [
+            {
+              "yearFrom": 2012,
+              "yearTo": 2024,
+              "engine": "1.0 / 1.2",
+              "fuel": "g95",
+              "tank": 37,
+              "cons": 5.0,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cupra",
+      "models": [
+        {
+          "name": "Formentor",
+          "variants": [
+            {
+              "yearFrom": 2020,
+              "yearTo": 2026,
+              "engine": "1.5 TSI / 2.0 TSI",
+              "fuel": "g95",
+              "tank": 45,
+              "cons": 6.4,
+              "note": ""
+            },
+            {
+              "yearFrom": 2020,
+              "yearTo": 2026,
+              "engine": "2.0 TDI",
+              "fuel": "goa",
+              "tank": 45,
+              "cons": 5.0,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "León",
+          "variants": [
+            {
+              "yearFrom": 2020,
+              "yearTo": 2026,
+              "engine": "2.0 TSI",
+              "fuel": "g95",
+              "tank": 45,
+              "cons": 6.8,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MG",
+      "models": [
+        {
+          "name": "ZS",
+          "variants": [
+            {
+              "yearFrom": 2019,
+              "yearTo": 2026,
+              "engine": "1.0 / 1.5",
+              "fuel": "g95",
+              "tank": 48,
+              "cons": 6.7,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "HS",
+          "variants": [
+            {
+              "yearFrom": 2020,
+              "yearTo": 2026,
+              "engine": "1.5 T-GDI",
+              "fuel": "g95",
+              "tank": 55,
+              "cons": 7.0,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
