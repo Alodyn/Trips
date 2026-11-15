@@ -27,6 +27,8 @@ jobs:
           mkdir -p _site
           rsync -a --exclude _site --exclude .git --exclude .github --exclude tools ./ _site/
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
